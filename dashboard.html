@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Employee Directory</h1>
+    <div class="header-actions">
+      <input type="text" id="searchInput" placeholder="Search by name or email..." />
+      <button onclick="location.href='form.html'">+ Add Employee</button>
+    </div>
+  </header>
+
+  <main>
+    <table class="employee-table">
+      <thead>
+        <tr>
+          <th onclick="sortBy('firstName')">First Name</th>
+          <th onclick="sortBy('lastName')">Last Name</th>
+          <th onclick="sortBy('email')">Email</th>
+          <th onclick="sortBy('department')">Department</th>
+          <th onclick="sortBy('role')">Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="employeeList"></tbody>
+    </table>
+  </main>
+
+  <footer class="pagination">
+    <label for="paginationLimit">Show per page:</label>
+    <select id="paginationLimit" onchange="renderEmployees()">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+  </footer>
+
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+</html>
